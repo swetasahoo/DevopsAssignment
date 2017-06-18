@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+
+<<!-- link rel="stylesheet" href="resources/css/bootstrap.min.css" />
+<script src="resources/js/bootstrap.min.js"></script> -->
+
+</head>
+<body ng-app="myApp">
+	<div class="container" ng-controller="UserProfileController as ctrl" style="top: 30%;">
+		<br/><br/><br/>
+		<form class="form-horizontal" name="myForm" role="form" ng-submit="ctrl.submit()">
+			<div class="form-group"
+							ng-class="{ 'has-error': form.userName.$dirty && form.userName.$error.required }">
+							<label for="username">Username</label> <input type="text"
+								name="userName" id="userName" class="form-control"
+								ng-model="ctrl.user.Username" required /> <span
+								ng-show="form.userName.$dirty && form.userName.$error.required"
+								class="help-block">User Name is required</span>
+						</div>
+						<div class="form-group"
+							ng-class="{ 'has-error': form.namee.$dirty && form.name.$error.required }">
+							<label for="username">Name</label> <input type="text"
+								name="name" id="Text1" class="form-control"
+								ng-model="ctrl.user.Name" required /> <span
+								ng-show="form.name.$dirty && form.name.$error.required"
+								class="help-block">Name is required</span>
+						</div>
+						<div class="form-group"
+							ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+							<label for="username">Email</label> <input type="text"
+								name="email" id="email" class="form-control"
+								ng-model="ctrl.user.Email" required /> <span
+								ng-show="form.email.$dirty && form.email.$error.required"
+								class="help-block">Email is required</span>
+						</div>
+						<div class="form-group"
+							ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+							<label for="password">Password</label> <input type="password"
+								name="password" id="password" class="form-control"
+								ng-model="ctrl.user.Password" required /> <span
+								ng-show="form.password.$dirty && form.password.$error.required"
+								class="help-block">Password is required</span>
+						</div>
+			<div class="form-group">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
+					<button type="submit" ng-disabled="form$invalid || ctrl.dataLoading" class="btn btn-info">Create me?</button>
+					<button type="reset" class="btn btn-danger" ng-click="ctrl.reset()" >Clear</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
